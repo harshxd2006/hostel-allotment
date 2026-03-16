@@ -479,10 +479,12 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.room.selected {
-    background: #2E6DA4;
-    border-color: #FFD700;
-    box-shadow: 0 0 12px rgba(46, 109, 164, 0.6);
+.room.selected,
+.room.available.selected,
+.room.available.selected:hover {
+    background: #2E6DA4 !important;
+    border-color: #FFD700 !important;
+    box-shadow: 0 0 12px rgba(46, 109, 164, 0.6) !important;
 }
 
 /* ── Map Legend ── */
