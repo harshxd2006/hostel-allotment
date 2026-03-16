@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hostel Allotment Dashboard - NIT Hamirpur</title>
+    <link rel="stylesheet" href="room_availability.css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <img src="nith_logo.png" alt="NIT Hamirpur Logo" class="header-logo" />
+        <div class="header-text">
+            <div class="hindi">राष्ट्रीय प्रौद्योगिकी संस्थान हमीरपुर</div>
+            <div class="english">National Institute of Technology Hamirpur</div>
+            <div class="sub">(An Institute of National Importance)</div>
+        </div>
+        <div class="header-user">
+            <span class="user-name">Anshu Kumar</span>
+            <span class="user-roll">22BCS045</span>
+            <button class="logout-btn">Logout</button>
+        </div>
+    </div>
+
+    <!-- Blue bar -->
+    <div class="blue-bar">
+        <h2>Hostel Allotment Portal 2026</h2>
+    </div>
+
+    <!-- Main container with sidebar -->
+    <div class="main-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <!-- Queue Status (Live) -->
+            <div class="sidebar-section" id="sidebar-queue-status" onclick="showSection('queue-status')">
+                <div class="section-header">
+                    <span class="icon"></span>
+                    <h3>Queue Status (Live)</h3>
+                </div>
+                <div class="section-content">
+                    <!-- Content will be added later -->
+                </div>
+            </div>
+
+            <!-- Room Availability Overview -->
+            <div class="sidebar-section active" id="sidebar-room-availability"
+                onclick="showSection('room-availability')">
+                <div class="section-header">
+                    <span class="icon"></span>
+                    <h3>Room Availability</h3>
+                </div>
+                <div class="section-content">
+                    <!-- Content will be added later -->
+                </div>
+            </div>
+
+            <!-- Pending Requests -->
+            <div class="sidebar-section" id="sidebar-pending-requests" onclick="showSection('pending-requests')">
+                <div class="section-header">
+                    <span class="icon"></span>
+                    <h3>Pending Requests</h3>
+                    <span class="badge">2</span>
+                </div>
+                <div class="section-content">
+                    <!-- Content will be added later -->
+                </div>
+            </div>
+
+            <!-- My Batch Info -->
+            <div class="sidebar-section" id="sidebar-batch-info" onclick="showSection('batch-info')">
+                <div class="section-header">
+                    <span class="icon"></span>
+                    <h3>My Batch Info</h3>
+                </div>
+                <div class="section-content">
+                    <!-- Content will be added later -->
+                </div>
+            </div>
+
+            <!-- Booking Status -->
+            <div class="sidebar-section" id="sidebar-booking-status" onclick="showSection('booking-status')">
+                <div class="section-header">
+                    <span class="icon"></span>
+                    <h3>Booking Status</h3>
+                </div>
+                <div class="section-content">
+                    <!-- Content will be added later -->
+                </div>
+            </div>
+
+            <!-- Help & Support -->
+            <div class="sidebar-section" id="sidebar-help-support" onclick="showSection('help-support')">
+                <div class="section-header">
+                    <span class="icon"></span>
+                    <h3>Help & Support</h3>
+                </div>
+                <div class="section-content">
+                    <!-- Content will be added later -->
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- Main content area -->
+        <main class="main-content">
+
+            <!-- Room Availability Section -->
+            <div id="room-availability-section" class="content-section">
+                <h2 class="section-title">Room Availability</h2>
+
+                <!-- Capacity Filter -->
+                <div class="capacity-filter-section">
+                    <label class="filter-label">Filter by Capacity:</label>
+                    <div class="capacity-filter-buttons">
+                        <button class="capacity-filter-btn active" onclick="filterByCapacity('all')">All Rooms</button>
+                        <button class="capacity-filter-btn" onclick="filterByCapacity('3')">3-Seater</button>
+                        <button class="capacity-filter-btn" onclick="filterByCapacity('4')">4-Seater</button>
+                    </div>
+                </div>
+
+                <!-- Floor Selector -->
+                <div class="floor-selector">
+                    <button class="floor-btn active" onclick="changeFloor('ground')">G</button>
+                    <button class="floor-btn" onclick="changeFloor('1')">1</button>
+                    <button class="floor-btn" onclick="changeFloor('2')">2</button>
+                    <button class="floor-btn" onclick="changeFloor('3')">3</button>
+                    <button class="floor-btn" onclick="changeFloor('4')">4</button>
+                    <button class="floor-btn" onclick="changeFloor('5')">5</button>
+                    <button class="floor-btn" onclick="changeFloor('6')">6</button>
+                </div>
+
+                <!-- Hostel Map -->
+                <div class="hostel-map-container">
+                    <div class="hostel-map" id="hostel-map">
+
+                        <!-- Ground Floor Map (default) -->
+                        <div class="floor-map" id="floor-ground">
+                            <div class="floor-container">
+                                <div class="outer-building">
+
+                                    
+
+                                    <div class="top-left-rooms">
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('G014')">
+                                            G014<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('G024')">
+                                            G024<span class="capacity-badge">4</span></div>
+                                        <div class="room booked" data-capacity="4" onclick="selectRoom('G034')">
+                                            G034<span class="capacity-badge">4</span></div>
+                                    </div>
+
+                                    <div class="top-center-rooms">
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('G044')">
+                                            G044<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('G054')">
+                                            G054<span class="capacity-badge">4</span></div>
+                                    </div>
+
+                                    <div class="inner-building">
+                                        <div class="inner-top-rooms">
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('G063')">
+                                                G063<span class="capacity-badge">3</span></div>
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('G073')">
+                                                G073<span class="capacity-badge">3</span></div>
+                                        </div>
+                                        <div class="inner-center"></div>
+                                        <div class="inner-bottom-rooms">
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('G083')">
+                                                G083<span class="capacity-badge">3</span></div>
+                                            <div class="room booked" data-capacity="3" onclick="selectRoom('G093')">
+                                                G093<span class="capacity-badge">3</span></div>
+                                        </div>
+                                    </div>
+
+                                    
+
+                                    <div class="bottom-rooms">
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('G104')">
+                                            G104<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('G114')">
+                                            G114<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('G124')">
+                                            G124<span class="capacity-badge">4</span></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 1st Floor Map -->
+                        <div class="floor-map" id="floor-1" style="display: none;">
+                            <div class="floor-container">
+                                <div class="outer-building">
+                                    
+                                    <div class="top-left-rooms">
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('1014')">
+                                            1014<span class="capacity-badge">4</span></div>
+                                        <div class="room booked" data-capacity="4" onclick="selectRoom('1024')">
+                                            1024<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('1034')">
+                                            1034<span class="capacity-badge">4</span></div>
+                                    </div>
+                                    <div class="top-center-rooms">
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('1044')">
+                                            1044<span class="capacity-badge">4</span></div>
+                                        <div class="room booked" data-capacity="4" onclick="selectRoom('1054')">
+                                            1054<span class="capacity-badge">4</span></div>
+                                    </div>
+                                    <div class="inner-building">
+                                        <div class="inner-top-rooms">
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('1063')">
+                                                1063<span class="capacity-badge">3</span></div>
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('1073')">
+                                                1073<span class="capacity-badge">3</span></div>
+                                        </div>
+                                        <div class="inner-center"></div>
+                                        <div class="inner-bottom-rooms">
+                                            <div class="room booked" data-capacity="3" onclick="selectRoom('1083')">
+                                                1083<span class="capacity-badge">3</span></div>
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('1093')">
+                                                1093<span class="capacity-badge">3</span></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="bottom-rooms">
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('1104')">
+                                            1104<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('1114')">
+                                            1114<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('1124')">
+                                            1124<span class="capacity-badge">4</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2nd Floor Map -->
+                        <div class="floor-map" id="floor-2" style="display: none;">
+                            <div class="floor-container">
+                                <div class="outer-building">
+                                    
+                                    <div class="top-left-rooms">
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('2014')">
+                                            2014<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('2024')">
+                                            2024<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('2034')">
+                                            2034<span class="capacity-badge">4</span></div>
+                                    </div>
+                                    <div class="top-center-rooms">
+                                        <div class="room booked" data-capacity="4" onclick="selectRoom('2044')">
+                                            2044<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('2054')">
+                                            2054<span class="capacity-badge">4</span></div>
+                                    </div>
+                                    <div class="inner-building">
+                                        <div class="inner-top-rooms">
+                                            <div class="room booked" data-capacity="3" onclick="selectRoom('2063')">
+                                                2063<span class="capacity-badge">3</span></div>
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('2073')">
+                                                2073<span class="capacity-badge">3</span></div>
+                                        </div>
+                                        <div class="inner-center"></div>
+                                        <div class="inner-bottom-rooms">
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('2083')">
+                                                2083<span class="capacity-badge">3</span></div>
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('2093')">
+                                                2093<span class="capacity-badge">3</span></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="bottom-rooms">
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('2104')">
+                                            2104<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('2114')">
+                                            2114<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('2124')">
+                                            2124<span class="capacity-badge">4</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3rd Floor Map -->
+                        <div class="floor-map" id="floor-3" style="display: none;">
+                            <div class="floor-container">
+                                <div class="outer-building">
+                                    
+                                    <div class="top-left-rooms">
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('3014')">
+                                            3014<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('3024')">
+                                            3024<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('3034')">
+                                            3034<span class="capacity-badge">4</span></div>
+                                    </div>
+                                    <div class="top-center-rooms">
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('3044')">
+                                            3044<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('3054')">
+                                            3054<span class="capacity-badge">4</span></div>
+                                    </div>
+                                    <div class="inner-building">
+                                        <div class="inner-top-rooms">
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('3063')">
+                                                3063<span class="capacity-badge">3</span></div>
+                                            <div class="room booked" data-capacity="3" onclick="selectRoom('3073')">
+                                                3073<span class="capacity-badge">3</span></div>
+                                        </div>
+                                        <div class="inner-center"></div>
+                                        <div class="inner-bottom-rooms">
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('3083')">
+                                                3083<span class="capacity-badge">3</span></div>
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('3093')">
+                                                3093<span class="capacity-badge">3</span></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="bottom-rooms">
+                                        <div class="room booked" data-capacity="4" onclick="selectRoom('3104')">
+                                            3104<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('3114')">
+                                            3114<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('3124')">
+                                            3124<span class="capacity-badge">4</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4th Floor Map -->
+                        <div class="floor-map" id="floor-4" style="display: none;">
+                            <div class="floor-container">
+                                <div class="outer-building">
+                                    
+                                    <div class="top-left-rooms">
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('4014')">
+                                            4014<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('4024')">
+                                            4024<span class="capacity-badge">4</span></div>
+                                        <div class="room booked" data-capacity="4" onclick="selectRoom('4034')">
+                                            4034<span class="capacity-badge">4</span></div>
+                                    </div>
+                                    <div class="top-center-rooms">
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('4044')">
+                                            4044<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('4054')">
+                                            4054<span class="capacity-badge">4</span></div>
+                                    </div>
+                                    <div class="inner-building">
+                                        <div class="inner-top-rooms">
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('4063')">
+                                                4063<span class="capacity-badge">3</span></div>
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('4073')">
+                                                4073<span class="capacity-badge">3</span></div>
+                                        </div>
+                                        <div class="inner-center"></div>
+                                        <div class="inner-bottom-rooms">
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('4083')">
+                                                4083<span class="capacity-badge">3</span></div>
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('4093')">
+                                                4093<span class="capacity-badge">3</span></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="bottom-rooms">
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('4104')">
+                                            4104<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('4114')">
+                                            4114<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('4124')">
+                                            4124<span class="capacity-badge">4</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5th Floor Map -->
+                        <div class="floor-map" id="floor-5" style="display: none;">
+                            <div class="floor-container">
+                                <div class="outer-building">
+                                    
+                                    <div class="top-left-rooms">
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('5014')">
+                                            5014<span class="capacity-badge">4</span></div>
+                                        <div class="room booked" data-capacity="4" onclick="selectRoom('5024')">
+                                            5024<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('5034')">
+                                            5034<span class="capacity-badge">4</span></div>
+                                    </div>
+                                    <div class="top-center-rooms">
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('5044')">
+                                            5044<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('5054')">
+                                            5054<span class="capacity-badge">4</span></div>
+                                    </div>
+                                    <div class="inner-building">
+                                        <div class="inner-top-rooms">
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('5063')">
+                                                5063<span class="capacity-badge">3</span></div>
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('5073')">
+                                                5073<span class="capacity-badge">3</span></div>
+                                        </div>
+                                        <div class="inner-center"></div>
+                                        <div class="inner-bottom-rooms">
+                                            <div class="room booked" data-capacity="3" onclick="selectRoom('5083')">
+                                                5083<span class="capacity-badge">3</span></div>
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('5093')">
+                                                5093<span class="capacity-badge">3</span></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="bottom-rooms">
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('5104')">
+                                            5104<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('5114')">
+                                            5114<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('5124')">
+                                            5124<span class="capacity-badge">4</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6th Floor Map -->
+                        <div class="floor-map" id="floor-6" style="display: none;">
+                            <div class="floor-container">
+                                <div class="outer-building">
+                                    
+                                    <div class="top-left-rooms">
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('6014')">
+                                            6014<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('6024')">
+                                            6024<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('6034')">
+                                            6034<span class="capacity-badge">4</span></div>
+                                    </div>
+                                    <div class="top-center-rooms">
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('6044')">
+                                            6044<span class="capacity-badge">4</span></div>
+                                        <div class="room booked" data-capacity="4" onclick="selectRoom('6054')">
+                                            6054<span class="capacity-badge">4</span></div>
+                                    </div>
+                                    <div class="inner-building">
+                                        <div class="inner-top-rooms">
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('6063')">
+                                                6063<span class="capacity-badge">3</span></div>
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('6073')">
+                                                6073<span class="capacity-badge">3</span></div>
+                                        </div>
+                                        <div class="inner-center"></div>
+                                        <div class="inner-bottom-rooms">
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('6083')">
+                                                6083<span class="capacity-badge">3</span></div>
+                                            <div class="room available" data-capacity="3" onclick="selectRoom('6093')">
+                                                6093<span class="capacity-badge">3</span></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="bottom-rooms">
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('6104')">
+                                            6104<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('6114')">
+                                            6114<span class="capacity-badge">4</span></div>
+                                        <div class="room available" data-capacity="4" onclick="selectRoom('6124')">
+                                            6124<span class="capacity-badge">4</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Legend -->
+                    <div class="map-legend">
+                        <div class="legend-item">
+                            <div class="legend-color available"></div>
+                            <span>Available</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color booked"></div>
+                            <span>Booked</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color selected"></div>
+                            <span>Your Selection</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other sections (hidden by default) -->
+            <div id="queue-status-section" class="content-section" style="display: none;">
+                <h2 class="section-title">Queue Status (Live)</h2>
+                <div class="content-placeholder">
+                    <p>Queue status content coming soon...</p>
+                </div>
+            </div>
+
+            <div id="pending-requests-section" class="content-section" style="display: none;">
+                <h2 class="section-title">Pending Requests</h2>
+                <div class="content-placeholder">
+                    <p>Pending requests content coming soon...</p>
+                </div>
+            </div>
+
+            <div id="batch-info-section" class="content-section" style="display: none;">
+                <h2 class="section-title">My Batch Info</h2>
+                <div class="content-placeholder">
+                    <p>Batch info content coming soon...</p>
+                </div>
+            </div>
+
+            <div id="booking-status-section" class="content-section" style="display: none;">
+                <h2 class="section-title">Booking Status</h2>
+                <div class="content-placeholder">
+                    <p>Booking status content coming soon...</p>
+                </div>
+            </div>
+
+            <div id="help-support-section" class="content-section" style="display: none;">
+                <h2 class="section-title">Help & Support</h2>
+                <div class="content-placeholder">
+                    <p>Help and support content coming soon...</p>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="room_availability.js"></script>
+</body>
+
+</html>

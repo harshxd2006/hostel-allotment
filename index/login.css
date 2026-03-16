@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+/* ── Header ── */
+.header {
+  background: #7B1A1A;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 32px;
+}
+
+.header-logo {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.header-text .hindi {
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+}
+
+.header-text .english {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.2px;
+}
+
+.header-text .sub {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ── Blue bar ── */
+.blue-bar {
+  background: #2E6DA4;
+  padding: 10px 32px;
+}
+
+.blue-bar h2 {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ── Page body ── */
+.page {
+  min-height: calc(100vh - 130px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px;
+}
+
+/* ── Card ── */
+.card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 36px 40px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #7B1A1A;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #aaa;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* ── Fields ── */
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #888;
+  margin-bottom: 7px;
+}
+
+.field input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #111;
+  outline: none;
+  background: white;
+  transition: border-color 0.2s;
+  
+}
+
+.field input::placeholder {
+  color: #111;
+  opacity: 0.5;
+}
+
+.field input:focus {
+  border-color: #2E6DA4;
+}
+
+/* ── Button ── */
+.btn {
+  width: 100%;
+  background: #7B1A1A;
+  color: white;
+  border: 1.5px solid #7B1A1A;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn:hover {
+  background: white;
+  color: #7B1A1A;
+}
+
+/* ── Forgot password ── */
+.forgot {
+  text-align: right;
+  margin-top: 12px;
+  font-size: 13px;
+  opacity: 50%;
+}
+
+.forgot a {
+  color: #2E6DA4;
+  text-decoration: none;
+}
+
+.forgot a:hover {
+  text-decoration: underline;
+}
+
+/* ── Footer note ── */
+.footer-note {
+  font-size: 12px;
+  color: #aaa;
+  text-align: center;
+  margin-top: 20px;
+}
