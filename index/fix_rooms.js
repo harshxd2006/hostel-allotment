@@ -16,36 +16,36 @@ function generateFloorHtml(floorNum) {
                                         ${num}<span class="capacity-badge">${cap}</span></div>`;
     }
 
-    // Left side: going down to top = 101 to 109. Since it's a column, first in HTML is top.
+    // Left side: going down to top = 101 to 108. Since it's a column, first in HTML is top.
     html += `\n                                    <div class="left-rooms">\n`;
-    for(let i=9; i>=1; i--) { html += getRoomHtml(base + i, 4) + '\n'; }
+    for(let i=8; i>=1; i--) { html += getRoomHtml(base + i, 4) + '\n'; }
     html += `                                    </div>\n`;
 
-    // Top side: going left to right = 110 to 118.
+    // Top side: going left to right = 109 to 117.
     html += `\n                                    <div class="top-rooms">\n`;
-    for(let i=10; i<=18; i++) { html += getRoomHtml(base + i, 4) + '\n'; }
+    for(let i=9; i<=17; i++) { html += getRoomHtml(base + i, 4) + '\n'; }
     html += `                                    </div>\n`;
 
-    // Right side: going top to bottom = 119 to 127.
+    // Right side: going top to bottom = 118 to 125.
     html += `\n                                    <div class="right-rooms">\n`;
-    for(let i=19; i<=27; i++) { html += getRoomHtml(base + i, 3) + '\n'; }
+    for(let i=18; i<=25; i++) { html += getRoomHtml(base + i, 3) + '\n'; }
     html += `                                    </div>\n`;
 
-    // Bottom side: going right to left = 128 to 136. Since it's a row, left is first in HTML.
-    // So if rightmost is 128, leftmost should be 136.
+    // Bottom side: going right to left = 126 to 134. Since it's a row, left is first in HTML.
+    // So if rightmost is 126, leftmost should be 134.
     html += `\n                                    <div class="bottom-rooms">\n`;
-    for(let i=36; i>=28; i--) { html += getRoomHtml(base + i, 3) + '\n'; }
+    for(let i=34; i>=26; i--) { html += getRoomHtml(base + i, 3) + '\n'; }
     html += `                                    </div>\n`;
 
     html += `\n                                    <div class="inner-building">\n`;
     html += `                                        <div class="inner-top-rooms">\n`;
-    html += getRoomHtml(base + 37, 3) + '\n';
     html += getRoomHtml(base + 38, 3) + '\n';
+    html += getRoomHtml(base + 37, 3) + '\n';
     html += `                                        </div>\n`;
     html += `                                        <div class="inner-center"></div>\n`;
     html += `                                        <div class="inner-bottom-rooms">\n`;
-    html += getRoomHtml(base + 39, 3) + '\n';
-    html += getRoomHtml(base + 40, 3) + '\n';
+    html += getRoomHtml(base + 36, 3) + '\n';
+    html += getRoomHtml(base + 35, 3) + '\n';
     html += `                                        </div>\n`;
     html += `                                    </div>\n`;
     
