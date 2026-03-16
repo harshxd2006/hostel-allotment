@@ -295,7 +295,7 @@ body {
 
 .floor-container {
     width: 100%;
-    max-width: 700px;
+    max-width: 900px;
 }
 
 /* ── Outer Building ── */
@@ -306,7 +306,7 @@ body {
     padding: 15px;
     position: relative;
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr auto;
     grid-template-rows: auto 1fr auto;
     gap: 12px;
     min-height: 380px;
@@ -323,13 +323,10 @@ body {
     gap: 8px;
     align-items: flex-start;
     justify-content: flex-start;
-    margin-left: -15px;
+    margin-left: 0;
 }
 
-.top-left-rooms .room {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-}
+
 
 .top-center-rooms {
     grid-column: 2;
@@ -338,13 +335,10 @@ body {
     gap: 8px;
     justify-content: center;
     align-items: flex-start;
-    margin-top: -15px;
+    margin-top: 0;
 }
 
-.top-center-rooms .room {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
+
 
 .bottom-rooms {
     grid-column: 2;
@@ -353,17 +347,38 @@ body {
     gap: 8px;
     justify-content: center;
     align-items: flex-end;
-    margin-bottom: -15px;
+    margin-bottom: 0;
 }
 
-.bottom-rooms .room {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+.left-rooms {
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    justify-content: center;
 }
 
+.top-rooms {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap; /* ensures they fit nicely */
+}
 
-
-/* ── Inner Building ── */
+.right-rooms {
+    grid-column: 3;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+    justify-content: center;
+}/* ── Inner Building ── */
 .inner-building {
     grid-column: 2;
     grid-row: 2;
@@ -378,16 +393,13 @@ body {
 
 .inner-top-rooms {
     display: flex;
+    flex-direction: column;
     gap: 8px;
-    justify-content: center;
     align-items: flex-start;
-    margin-top: -12px;
+    margin-top: 0;
 }
 
-.inner-top-rooms .room {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
+
 
 .inner-center {
     flex: 1;
@@ -402,13 +414,10 @@ body {
     gap: 8px;
     justify-content: flex-end;
     align-items: flex-start;
-    margin-left: -12px;
+    margin-left: 0;
 }
 
-.inner-bottom-rooms .room {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-}
+
 
 /* ── Rooms ── */
 .room {
