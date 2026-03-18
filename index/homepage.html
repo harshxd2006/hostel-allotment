@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hostel Allotment Dashboard - NIT Hamirpur</title>
+    <link rel="stylesheet" href="homepage.css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <img src="nith_logo.png" alt="NIT Hamirpur Logo" class="header-logo" />
+        <div class="header-text">
+            <div class="hindi">राष्ट्रीय प्रौद्योगिकी संस्थान हमीरपुर</div>
+            <div class="english">National Institute of Technology Hamirpur</div>
+            <div class="sub">(An Institute of National Importance)</div>
+        </div>
+        <div class="header-user">
+            <span class="user-name">Anshu Kumar</span>
+            <span class="user-roll">22BCS045</span>
+            <button class="logout-btn" onclick="window.location.href='login.html'">Logout</button>
+        </div>
+    </div>
+
+    <!-- Blue bar -->
+    <div class="blue-bar">
+        <h2>Hostel Allotment Portal 2026</h2>
+    </div>
+
+    <!-- Main container with sidebar -->
+    <div class="main-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <!-- Homepage -->
+            <div class="sidebar-section active" id="sidebar-home" onclick="showSection('home')">
+                <div class="section-header">
+                    <span class="icon"></span>
+                    <h3>Homepage</h3>
+                </div>
+                <div class="section-content">
+                    <!-- Content will be added later -->
+                </div>
+            </div>
+
+            <!-- My Portal -->
+            <div class="sidebar-section" id="sidebar-queue-status" onclick="window.location.href='my_portal.html'">
+                <div class="section-header">
+                    <span class="icon"></span>
+                    <h3>My Portal</h3>
+                </div>
+                <div class="section-content">
+                    <!-- Content will be added later -->
+                </div>
+            </div>
+
+            <!-- Room Availability Overview -->
+            <div class="sidebar-section" id="sidebar-room-availability"
+                onclick="window.location.href='room_availability.html'">
+                <div class="section-header">
+                    <span class="icon"></span>
+                    <h3>Room Availability</h3>
+                </div>
+                <div class="section-content">
+                    <!-- Content will be added later -->
+                </div>
+            </div>
+
+            <!-- Pending Requests -->
+            <div class="sidebar-section" id="sidebar-pending-requests" onclick="showSection('pending-requests')">
+                <div class="section-header">
+                    <span class="icon"></span>
+                    <h3>Pending Requests</h3>
+                    <span class="badge">2</span>
+                </div>
+                <div class="section-content">
+                    <!-- Content will be added later -->
+                </div>
+            </div>
+
+            <!-- My Batch Info -->
+            <div class="sidebar-section" id="sidebar-batch-info" onclick="showSection('batch-info')">
+                <div class="section-header">
+                    <span class="icon"></span>
+                    <h3>My Batch Info</h3>
+                </div>
+                <div class="section-content">
+                    <!-- Content will be added later -->
+                </div>
+            </div>
+
+            <!-- Booking Status -->
+            <div class="sidebar-section" id="sidebar-booking-status" onclick="showSection('booking-status')">
+                <div class="section-header">
+                    <span class="icon"></span>
+                    <h3>Booking Status</h3>
+                </div>
+                <div class="section-content">
+                    <!-- Content will be added later -->
+                </div>
+            </div>
+
+            <!-- Help & Support -->
+            <div class="sidebar-section" id="sidebar-help-support" onclick="showSection('help-support')">
+                <div class="section-header">
+                    <span class="icon"></span>
+                    <h3>Help & Support</h3>
+                </div>
+                <div class="section-content">
+                    <!-- Content will be added later -->
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- Main content area -->
+        <main class="main-content">
+
+            <!-- Home Section -->
+            <div id="home-section" class="content-section">
+                <h2 class="section-title">Dashboard</h2>
+
+                <!-- Batch Info Card -->
+                <div class="batch-info-card">
+                    <table class="batch-table">
+                        <thead>
+                            <tr>
+                                <th>YOUR BATCH</th>
+                                <th>TIME SLOT</th>
+                                <th>RANGE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Batch D</td>
+                                <td>12:00 - 12:30</td>
+                                <td>50 - 75</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Current Batch -->
+                <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 18px; color: #333; font-weight: 600;">
+                    Current Batch:</h3>
+                <div class="batch-info-card" style="margin-bottom: 20px;">
+                    <table class="batch-table">
+                        <thead>
+                            <tr>
+                                <th>BATCH</th>
+                                <th>TIME SLOT</th>
+                                <th>RANGE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Batch B</td>
+                                <td>10:00 - 10:30</td>
+                                <td>346 - 400</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Upcoming NEXT Batch -->
+                <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 18px; color: #333; font-weight: 600;">
+                    Upcoming NEXT Batch:</h3>
+                <div class="batch-info-card" style="margin-bottom: 30px;">
+                    <table class="batch-table">
+                        <thead>
+                            <tr>
+                                <th>BATCH</th>
+                                <th>TIME SLOT</th>
+                                <th>RANGE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Batch C</td>
+                                <td>10:30 - 11:00</td>
+                                <td>401 - 425</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Stats Summary -->
+                <div
+                    style="display: flex; justify-content: space-between; gap: 20px; font-size: 16px; color: #000; font-weight: 400;">
+                    <!-- Students Stats -->
+                    <div
+                        style="background: #fff; border: 1px solid #ddd; padding: 20px; border-radius: 12px; flex: 1; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+                        <div style="margin-bottom: 12px;"><span style="font-weight: 600;">Total students :</span> 650</div>
+                        <div style="margin-bottom: 12px;"><span style="font-weight: 600;">Alloted :</span> 487</div>
+                        <div><span style="font-weight: 600;">remaining students :</span> 163</div>
+                    </div>
+
+                    <!-- Rooms Stats -->
+                    <div
+                        style="background: #fff; border: 1px solid #ddd; padding: 20px; border-radius: 12px; flex: 1; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+                        <div style="margin-bottom: 12px;"><span style="font-weight: 600;">Total Rooms :</span> 130</div>
+                        <div style="margin-bottom: 12px;"><span style="font-weight: 600;">(F) Alloted :</span> 10</div>
+                        <div style="margin-bottom: 12px;"><span style="font-weight: 600;">(P) Alloted :</span> 2</div>
+                        <div><span style="font-weight: 600;">Remain :</span> 118</div>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="search-section">
+                    <div class="search-bar-container">
+                        <input type="text" id="searchInput" class="search-bar"
+                            placeholder="Search by Name or Roll Number..." oninput="filterStudents(); document.getElementById('clearSearchIcon').style.display = this.value.length > 0 ? 'block' : 'none';" onkeyup="filterStudents(); document.getElementById('clearSearchIcon').style.display = this.value.length > 0 ? 'block' : 'none';">
+                        <span class="search-icon"></span>
+                        <span class="clear-icon" id="clearSearchIcon" onclick="document.getElementById('searchInput').value=''; document.getElementById('searchInput').dispatchEvent(new Event('input'));" style="display: none; position: absolute; right: 40px; top: 50%; transform: translateY(-50%); font-size: 22px; color: #888; cursor: pointer; padding: 5px; line-height: 1;">&times;</span>
+                    </div>
+                </div>
+
+                <!-- Students Table -->
+                <div class="students-table-container">
+                    <table class="students-table" id="studentsTable">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Name</th>
+                                <th>Roll No</th>
+                                <th>CGPI</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentsTableBody">
+
+                            <!-- Batch A Header -->
+                            <tr class="batch-divider">
+                                <td colspan="5">
+                                    <div class="batch-info-row">
+                                        <span class="batch-label">Batch A</span>
+                                        <span class="batch-time">10:30 - 11:00</span>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Batch A Students (1-25) -->
+                            <tr>
+                                <td>1</td>
+                                <td>Anshu</td>
+                                <td>25</td>
+                                <td>8.7</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Harsh</td>
+                                <td>19</td>
+                                <td>8.5</td>
+                                <td><span class="status-badge missed">Missed</span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Priya</td>
+                                <td>42</td>
+                                <td>8.4</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Rahul</td>
+                                <td>33</td>
+                                <td>8.3</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Neha</td>
+                                <td>17</td>
+                                <td>8.2</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Vikram</td>
+                                <td>28</td>
+                                <td>8.1</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Sneha</td>
+                                <td>45</td>
+                                <td>8.0</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Karan</td>
+                                <td>12</td>
+                                <td>7.9</td>
+                                <td><span class="status-badge missed">Missed</span></td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Pooja</td>
+                                <td>38</td>
+                                <td>7.8</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Arjun</td>
+                                <td>22</td>
+                                <td>7.7</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>Aditi</td>
+                                <td>50</td>
+                                <td>7.6</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>Ravi</td>
+                                <td>31</td>
+                                <td>7.5</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>Simran</td>
+                                <td>44</td>
+                                <td>7.4</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>Rohan</td>
+                                <td>18</td>
+                                <td>7.3</td>
+                                <td><span class="status-badge missed">Missed</span></td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>Ananya</td>
+                                <td>27</td>
+                                <td>7.2</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>Ishaan</td>
+                                <td>36</td>
+                                <td>7.1</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td>Diya</td>
+                                <td>49</td>
+                                <td>7.0</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>Kunal</td>
+                                <td>14</td>
+                                <td>6.9</td>
+                                <td><span class="status-badge missed">Missed</span></td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td>Meera</td>
+                                <td>40</td>
+                                <td>6.8</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>Sahil</td>
+                                <td>23</td>
+                                <td>6.7</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>21</td>
+                                <td>Riya</td>
+                                <td>47</td>
+                                <td>6.6</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>22</td>
+                                <td>Ayush</td>
+                                <td>11</td>
+                                <td>6.5</td>
+                                <td><span class="status-badge missed">Missed</span></td>
+                            </tr>
+                            <tr>
+                                <td>23</td>
+                                <td>Tanvi</td>
+                                <td>35</td>
+                                <td>6.4</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>24</td>
+                                <td>Siddharth</td>
+                                <td>29</td>
+                                <td>6.3</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>25</td>
+                                <td>Laksh</td>
+                                <td>21</td>
+                                <td>8.4</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+
+                            <!-- Gap between batches -->
+                            <tr class="batch-gap">
+                                <td colspan="5"></td>
+                            </tr>
+
+                            <!-- Batch B Header -->
+                            <tr class="batch-divider">
+                                <td colspan="5">
+                                    <div class="batch-info-row">
+                                        <span class="batch-label">Batch B</span>
+                                        <span class="batch-time">11:00 - 11:30</span>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Batch B Students (26-50) -->
+                            <tr>
+                                <td>26</td>
+                                <td>Kavya</td>
+                                <td>43</td>
+                                <td>6.2</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>27</td>
+                                <td>Nikhil</td>
+                                <td>16</td>
+                                <td>6.1</td>
+                                <td><span class="status-badge missed">Missed</span></td>
+                            </tr>
+                            <tr>
+                                <td>28</td>
+                                <td>Anika</td>
+                                <td>39</td>
+                                <td>6.0</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>29</td>
+                                <td>Yash</td>
+                                <td>26</td>
+                                <td>5.9</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Divya</td>
+                                <td>48</td>
+                                <td>5.8</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>31</td>
+                                <td>Aman</td>
+                                <td>13</td>
+                                <td>5.7</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>32</td>
+                                <td>Shruti</td>
+                                <td>41</td>
+                                <td>5.6</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>33</td>
+                                <td>Varun</td>
+                                <td>24</td>
+                                <td>5.5</td>
+                                <td><span class="status-badge missed">Missed</span></td>
+                            </tr>
+                            <tr>
+                                <td>34</td>
+                                <td>Nisha</td>
+                                <td>37</td>
+                                <td>5.4</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>35</td>
+                                <td>Akash</td>
+                                <td>15</td>
+                                <td>5.3</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>36</td>
+                                <td>Tanya</td>
+                                <td>46</td>
+                                <td>5.2</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>37</td>
+                                <td>Rohit</td>
+                                <td>20</td>
+                                <td>5.1</td>
+                                <td><span class="status-badge missed">Missed</span></td>
+                            </tr>
+                            <tr>
+                                <td>38</td>
+                                <td>Kiara</td>
+                                <td>32</td>
+                                <td>5.0</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>39</td>
+                                <td>Aryan</td>
+                                <td>10</td>
+                                <td>4.9</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>40</td>
+                                <td>Zara</td>
+                                <td>34</td>
+                                <td>4.8</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>41</td>
+                                <td>Dev</td>
+                                <td>30</td>
+                                <td>4.7</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>42</td>
+                                <td>Sara</td>
+                                <td>51</td>
+                                <td>4.6</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>43</td>
+                                <td>Rishabh</td>
+                                <td>09</td>
+                                <td>4.5</td>
+                                <td><span class="status-badge missed">Missed</span></td>
+                            </tr>
+                            <tr>
+                                <td>44</td>
+                                <td>Isha</td>
+                                <td>52</td>
+                                <td>4.4</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>45</td>
+                                <td>Pranav</td>
+                                <td>08</td>
+                                <td>4.3</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>46</td>
+                                <td>Muskan</td>
+                                <td>53</td>
+                                <td>4.2</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>47</td>
+                                <td>Vivek</td>
+                                <td>07</td>
+                                <td>4.1</td>
+                                <td><span class="status-badge missed">Missed</span></td>
+                            </tr>
+                            <tr>
+                                <td>48</td>
+                                <td>Anjali</td>
+                                <td>54</td>
+                                <td>4.0</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>49</td>
+                                <td>Karthik</td>
+                                <td>06</td>
+                                <td>3.9</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>50</td>
+                                <td>Pallavi</td>
+                                <td>55</td>
+                                <td>3.8</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+
+                            <!-- Gap between batches -->
+                            <tr class="batch-gap">
+                                <td colspan="5"></td>
+                            </tr>
+
+                            <!-- Batch C Header -->
+                            <tr class="batch-divider">
+                                <td colspan="5">
+                                    <div class="batch-info-row">
+                                        <span class="batch-label">Batch C</span>
+                                        <span class="batch-time">11:30 - 12:00</span>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Batch C Students (51-75) -->
+                            <tr>
+                                <td>51</td>
+                                <td>Mohit</td>
+                                <td>05</td>
+                                <td>3.7</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>52</td>
+                                <td>Navya</td>
+                                <td>56</td>
+                                <td>3.6</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>53</td>
+                                <td>Aditya</td>
+                                <td>04</td>
+                                <td>3.5</td>
+                                <td><span class="status-badge missed">Missed</span></td>
+                            </tr>
+                            <tr>
+                                <td>54</td>
+                                <td>Sakshi</td>
+                                <td>57</td>
+                                <td>3.4</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>55</td>
+                                <td>Manish</td>
+                                <td>03</td>
+                                <td>3.3</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>56</td>
+                                <td>Deepika</td>
+                                <td>58</td>
+                                <td>3.2</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>57</td>
+                                <td>Saurabh</td>
+                                <td>02</td>
+                                <td>3.1</td>
+                                <td><span class="status-badge missed">Missed</span></td>
+                            </tr>
+                            <tr>
+                                <td>58</td>
+                                <td>Ritika</td>
+                                <td>59</td>
+                                <td>3.0</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>59</td>
+                                <td>Gaurav</td>
+                                <td>01</td>
+                                <td>2.9</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>60</td>
+                                <td>Preeti</td>
+                                <td>60</td>
+                                <td>2.8</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>61</td>
+                                <td>Rajat</td>
+                                <td>61</td>
+                                <td>2.7</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>62</td>
+                                <td>Swati</td>
+                                <td>62</td>
+                                <td>2.6</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>63</td>
+                                <td>Dhruv</td>
+                                <td>63</td>
+                                <td>2.5</td>
+                                <td><span class="status-badge missed">Missed</span></td>
+                            </tr>
+                            <tr>
+                                <td>64</td>
+                                <td>Nikita</td>
+                                <td>64</td>
+                                <td>2.4</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>65</td>
+                                <td>Shubham</td>
+                                <td>65</td>
+                                <td>2.3</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>66</td>
+                                <td>Jyoti</td>
+                                <td>66</td>
+                                <td>2.2</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>67</td>
+                                <td>Abhishek</td>
+                                <td>67</td>
+                                <td>2.1</td>
+                                <td><span class="status-badge missed">Missed</span></td>
+                            </tr>
+                            <tr>
+                                <td>68</td>
+                                <td>Komal</td>
+                                <td>68</td>
+                                <td>2.0</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>69</td>
+                                <td>Pankaj</td>
+                                <td>69</td>
+                                <td>1.9</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>70</td>
+                                <td>Megha</td>
+                                <td>70</td>
+                                <td>1.8</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>71</td>
+                                <td>Sumit</td>
+                                <td>71</td>
+                                <td>1.7</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>72</td>
+                                <td>Payal</td>
+                                <td>72</td>
+                                <td>1.6</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>73</td>
+                                <td>Tarun</td>
+                                <td>73</td>
+                                <td>1.5</td>
+                                <td><span class="status-badge missed">Missed</span></td>
+                            </tr>
+                            <tr>
+                                <td>74</td>
+                                <td>Seema</td>
+                                <td>74</td>
+                                <td>1.4</td>
+                                <td><span class="status-badge allotted">Allotted</span></td>
+                            </tr>
+                            <tr>
+                                <td>75</td>
+                                <td>Nitin</td>
+                                <td>75</td>
+                                <td>1.3</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Other sections (hidden by default) -->
+            <div id="queue-status-section" class="content-section" style="display: none;">
+                <h2 class="section-title">Queue Status (Live)</h2>
+                <div class="content-placeholder">
+                    <p>Queue status content coming soon...</p>
+                </div>
+            </div>
+
+            <div id="pending-requests-section" class="content-section" style="display: none;">
+                <h2 class="section-title">Pending Requests</h2>
+                <div class="content-placeholder">
+                    <p>Pending requests content coming soon...</p>
+                </div>
+            </div>
+
+            <div id="batch-info-section" class="content-section" style="display: none;">
+                <h2 class="section-title">My Batch Info</h2>
+                <div class="content-placeholder">
+                    <p>Batch info content coming soon...</p>
+                </div>
+            </div>
+
+            <div id="booking-status-section" class="content-section" style="display: none;">
+                <h2 class="section-title">Booking Status</h2>
+                <div class="content-placeholder">
+                    <p>Booking status content coming soon...</p>
+                </div>
+            </div>
+
+            <div id="help-support-section" class="content-section" style="display: none;">
+                <h2 class="section-title">Help & Support</h2>
+                <div class="content-placeholder">
+                    <p>Help and support content coming soon...</p>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="homepage.js"></script>
+</body>
+
+</html>

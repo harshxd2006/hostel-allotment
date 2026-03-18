@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hostel Allotment Dashboard - NIT Hamirpur</title>
-    <link rel="stylesheet" href="room_availability.css" />
+    <link rel="stylesheet" href="my_portal.css" />
 </head>
 
 <body>
@@ -48,7 +48,7 @@
             </div>
 
             <!-- My Portal -->
-            <div class="sidebar-section" id="sidebar-queue-status" onclick="window.location.href='my_portal.html'">
+            <div class="sidebar-section active" id="sidebar-queue-status" onclick="window.location.href='my_portal.html'">
                 <div class="section-header">
                     <span class="icon"></span>
                     <h3>My Portal</h3>
@@ -59,8 +59,8 @@
             </div>
 
             <!-- Room Availability Overview -->
-            <div class="sidebar-section active" id="sidebar-room-availability"
-                onclick="showSection('room-availability')">
+            <div class="sidebar-section" id="sidebar-room-availability"
+                onclick="window.location.href='room_availability.html'">
                 <div class="section-header">
                     <span class="icon"></span>
                     <h3>Room Availability</h3>
@@ -120,33 +120,34 @@
         <!-- Main content area -->
         <main class="main-content">
 
-            <!-- Room Availability Section -->
+            <!-- Portal Section -->
             <div id="room-availability-section" class="content-section">
-                <h2 class="section-title">Room Availability</h2>
-
-                <!-- Room Stats Dashboard -->
-                <div class="room-stats-container">
-                    <div class="stat-card">
-                        <span class="stat-value">130</span>
-                        <span class="stat-label">Total Rooms</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-value">10</span>
-                        <span class="stat-label">(F) Occupied</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-value">2</span>
-                        <span class="stat-label">(P) Occupied</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-value">118</span>
-                        <span class="stat-label">Remain</span>
+                <!-- Header with Title and Timer -->
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                    <h2 class="section-title" style="margin-bottom: 0;">Portal page</h2>
+                    <div class="timer" style="font-size: 16px; color: #333; font-weight: 500;">
+                        <span>Time remaining : </span>
+                        <span style="font-weight: 600;">24:35</span>
                     </div>
                 </div>
 
-                <div class="stats-note"
-                    style="text-align: right; font-size: 12px; color: #777; margin-top: -12px; margin-bottom: 24px; font-weight: 500;">
-                    * F = Fully Occupied &nbsp;|&nbsp; P = Partially Occupied
+                <!-- Student Info Card -->
+                <div class="student-info-card" style="border: 2px solid #555; background-color: #fcfcfc; padding: 20px; border-radius: 12px; margin-bottom: 30px; font-size: 16px; color: #333; line-height: 1.8;">
+                    <div style="font-weight: 500;">
+                        Anshu Roy. &nbsp;(25BPH025)
+                    </div>
+                    <div style="display: flex; gap: 80px;">
+                        <span>Rank : 50</span>
+                        <span>Batch : B</span>
+                    </div>
+                    <div>
+                        <span>CGPI : 8.7</span>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h3 style="font-size: 16px; color: #555; margin-bottom: 5px; font-weight: 500;">Room map :</h3>
+                    <h3 style="font-size: 18px; color: #333; font-weight: 600; letter-spacing: 0.5px;">SELECT ROOM AND FLOOR.</h3>
                 </div>
 
                 <!-- Capacity Filter -->
@@ -949,12 +950,34 @@
                     </div>
                 </div>
 
+                <div style="display: flex; flex-direction: column; align-items: center; margin-top: 60px;">
+                    <div style="width: 100%; max-width: 500px;">
+                        <!-- SELECT ROOMMATES Section -->
+                        <div class="roommates-section" style="margin-bottom: 30px;">
+                            <h3 style="font-size: 16px; color: #333; margin-bottom: 20px; font-weight: 500; letter-spacing: 1px;">SELECT ROOMMATES :</h3>
+                            
+                            <div style="display: flex; flex-direction: column; gap: 15px;">
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <label style="font-weight: 500; font-size: 16px; min-width: 70px; color: #333;">1st RM</label>
+                                    <input type="text" placeholder="" style="flex: 1; padding: 12px 15px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; outline: none; transition: border-color 0.3s; color: #333;" onfocus="this.style.borderColor='#2E6DA4'" onblur="this.style.borderColor='#ccc'">
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <label style="font-weight: 500; font-size: 16px; min-width: 70px; color: #333;">2nd RM</label>
+                                    <input type="text" placeholder="" style="flex: 1; padding: 12px 15px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; outline: none; transition: border-color 0.3s; color: #333;" onfocus="this.style.borderColor='#2E6DA4'" onblur="this.style.borderColor='#ccc'">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Confirm & Submit Button -->
+                        <div class="submit-section" style="margin-top: 40px; margin-bottom: 50px; text-align: center;">
+                            <button class="confirm-btn" onclick="alert('Submission successful! Your selected roommates and room have been confirmed.');" onmouseover="this.style.background='#2E6DA4'; this.style.color='white'; this.style.borderColor='#2E6DA4'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='white'; this.style.color='#333'; this.style.borderColor='#999'; this.style.transform='translateY(0)';" style="background: white; color: #333; border: 1px solid #999; padding: 12px 30px; font-size: 16px; font-weight: 500; border-radius: 6px; cursor: pointer; transition: all 0.2s ease-in-out; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">Confirm & Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
                 <!-- Other sections (hidden by default) -->
                 <div id="queue-status-section" class="content-section" style="display: none;">
-                    <h2 class="section-title">Queue Status (Live)</h2>
-                    <div class="content-placeholder">
-                        <p>Queue status content coming soon...</p>
-                    </div>
                 </div>
 
                 <div id="pending-requests-section" class="content-section" style="display: none;">
@@ -989,7 +1012,7 @@
 
     </div>
 
-    <script src="room_availability.js"></script>
+    <script src="my_portal.js"></script>
 </body>
 
 </html>
